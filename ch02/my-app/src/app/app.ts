@@ -9,4 +9,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly chapterTitle = signal('Chapter 1: Angular AI Kick-Starter');
+
+  constructor() {
+    this.chapterTitle.SetTitle('Chapter 2: IssueTracker Lite');
+  }
 }
