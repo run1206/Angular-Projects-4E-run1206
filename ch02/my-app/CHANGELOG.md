@@ -1,0 +1,1 @@
+- Page 14: Replace `npm install @angular/animations` with `npm install @angular/animations -f`
