@@ -1,16 +1,29 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ChapterTitleComponent } from './chapter-title.component';
+import { ChapterTitleService } from './chapter-title.service';
+import { ClrLayoutModule } from '@clr/angular';
+import { IssueList } from './issue-list/issue-list';
+import { IssueReporter } from './issue-reporter/issue-reporter';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    ChapterTitleComponent,
+    ClrLayoutModule,
+    IssueList,
+    IssueReporter
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly chapterTitle = signal('Chapter 1: Angular AI Kick-Starter');
+  private readonly chapterTitleService = inject(ChapterTitleService);
+  protected readonly title = this.chapterTitleService.title;
+  // To set the title, use: this.chapterTitleService.setTitle('new-title');
 
   constructor() {
-    this.chapterTitle.SetTitle('Chapter 2: IssueTracker Lite');
+    this.chapterTitleService.setTitle(
+      'Chapter 2: IssueTracker Lite'
+    );
   }
 }
