@@ -22,8 +22,6 @@ export class App {
   // To set the title, use: this.chapterTitleService.setTitle('new-title');
 
   constructor() {
-    this.chapterTitleService.setTitle(
-      'Chapter 2: IssueTracker Lite'
-    );
+    this.chapterTitleService.setTitle('Chapter 2: IssueTracker Lite');
   }
 }
