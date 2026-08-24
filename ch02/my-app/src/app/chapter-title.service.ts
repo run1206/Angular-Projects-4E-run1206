@@ -1,10 +1,10 @@
 import { Injectable, signal } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ChapterTitleService {
-  private readonly _title = signal<string>('Chapter 1: Angular AI Kick-Starter');
+  private readonly _title = signal<string>('Chapter 2: IssueTracker Lite');
   readonly title = this._title;
 
   setTitle(newTitle: string): void {
