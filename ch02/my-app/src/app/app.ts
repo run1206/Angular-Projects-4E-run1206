@@ -19,11 +19,8 @@ import { IssueReporter } from './issue-reporter/issue-reporter';
 export class App {
   private readonly chapterTitleService = inject(ChapterTitleService);
   protected readonly title = this.chapterTitleService.title;
-  // To set the title, use: this.chapterTitleService.setTitle('new-title');
 
   constructor() {
-    this.chapterTitleService.setTitle(
-      'Chapter 2: IssueTracker Lite'
-    );
+    this.chapterTitleService.setTitle('Chapter 2: IssueTracker Lite');
   }
 }
