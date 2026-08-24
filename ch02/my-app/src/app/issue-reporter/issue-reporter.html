@@ -1,12 +1,15 @@
 <form clrForm [formGroup]="form">
   <clr-input-container>
     <label>Title</label>
-    <input clrInput formControlName="title" />
+    <input clrInput formControlName="title" title="Title" />
     <clr-control-error>Title is required</clr-control-error>
   </clr-input-container>
   <clr-textarea-container>
     <label>Description</label>
-    <textarea clrTextarea formControlName="description">
+    <textarea
+      clrTextarea
+      formControlName="description"
+      title="Description">
     </textarea>
   </clr-textarea-container>
   <clr-radio-container clrInline>
@@ -16,7 +19,8 @@
         type="radio"
         value="low"
         clrRadio
-        formControlName="priority" />
+        formControlName="priority"
+        title="Low priority" />
       <label>Low</label>
     </clr-radio-wrapper>
     <clr-radio-wrapper>
@@ -24,20 +28,21 @@
         type="radio"
         value="high"
         clrRadio
-        formControlName="priority" />
+        formControlName="priority"
+        title="High priority" />
       <label>High</label>
     </clr-radio-wrapper>
     <clr-control-error>Priority is required</clr-control-error>
   </clr-radio-container>
   <clr-select-container>
     <label>Type</label>
-    <select clrSelect formControlName="type">
+    <select clrSelect formControlName="type" title="Type">
       <option value="Feature">Feature</option>
       <option value="Bug">Bug</option>
     </select>
     <clr-control-error>Type is required</clr-control-error>
   </clr-select-container>
-  <button class="btn btn-primary" (click)="create()">
+  <button type="button" class="btn btn-primary" (click)="create()">
     Create
   </button>
 </form>
